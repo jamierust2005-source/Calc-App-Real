@@ -4,13 +4,7 @@ pipeline {
     stages {
         stage('Run Tests') {
             steps {
-                sh 'pytest --maxfail=1 --disable-warnings'
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t calculator-app:latest .'
+                sh 'pytest'
             }
         }
 
