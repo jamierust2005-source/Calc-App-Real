@@ -13,5 +13,11 @@ pipeline {
                 sh 'python3 calculator.py'
             }
         }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t calculator-app:latest .'
+            }
+        }
     }
 }
